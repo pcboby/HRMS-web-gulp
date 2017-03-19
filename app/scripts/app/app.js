@@ -1,11 +1,11 @@
 'use strict';
 angular.module('app', [
-        'ui.router',
         'oc.lazyLoad',
         'mgcrea.ngStrap',
         'ngSanitize',
         "ngResource",
         "ngAnimate",
+        'ui.router',
         'app.config',
         'app.routers',
         'app.factorys',
