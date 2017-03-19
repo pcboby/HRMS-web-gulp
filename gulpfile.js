@@ -33,10 +33,22 @@ var paths = {
         yeoman.test + '/spec/**/*.js'
     ],
     karma: 'karma.conf.js',
-    views: {
+    html: {
         main: yeoman.app + '/index.html',
-        files: [yeoman.app + '/views/**/*.html']
-    }
+        views: yeoman.app + '/views/**/*.html',
+        tpls: yeoman.app + '/tpls/**/*.html'
+    },
+    themes: {
+        css: yeoman.app + '/themes/**/css/*.css',
+        images: yeoman.app + '/themes/**/images/**/*',
+        fonts: yeoman.app + '/themes/**/fonts/*'
+    },
+    // scripts: {
+    //     common:yeoman.app+'/scripts/*.js',
+    //     ngapp: yeoman.app + '/scripts/app/**/*',
+    //     ctrls: yeoman.app + '/scripts/controllers/**/*',
+    //     utils: yeoman.app + '/scripts/utils/**/*'
+    // }
 };
 
 ////////////////////////
@@ -47,17 +59,33 @@ var lintScripts = lazypipe()
     .pipe($.jshint, '.jshintrc')
     .pipe($.jshint.reporter, 'jshint-stylish');
 
-var styles = lazypipe()
+var themes_css = lazypipe()
     .pipe($.autoprefixer, 'last 1 version')
-    .pipe(gulp.dest, '.tmp/styles');
+    .pipe(gulp.dest, '.tmp/themes');
+
+var themes_images = lazypipe()
+    .pipe(gulp.dest, '.tmp/themes');
+
+var themes_fonts = lazypipe()
+    .pipe(gulp.dest, '.tmp/themes');
 
 ///////////
 // Tasks //
 ///////////
 
-gulp.task('styles', function() {
-    return gulp.src(paths.styles)
-        .pipe(styles());
+gulp.task('themes_css', function() {
+    return gulp.src(paths.themes.css)
+        .pipe(themes_css());
+});
+
+gulp.task('themes_fonts', function() {
+    return gulp.src(paths.themes.fonts)
+        .pipe(themes_fonts());
+});
+
+gulp.task('themes_images', function() {
+    return gulp.src(paths.themes.images)
+        .pipe(themes_images());
 });
 
 gulp.task('lint:scripts', function() {
@@ -69,7 +97,7 @@ gulp.task('clean:tmp', function(cb) {
     rimraf('./.tmp', cb);
 });
 
-gulp.task('start:client', ['start:server', 'styles'], function() {
+gulp.task('start:client', ['start:server', 'themes_css', 'themes_fonts', 'themes_images'], function() {
     openURL('http://localhost:9000/app');
 });
 
@@ -91,12 +119,12 @@ gulp.task('start:server:test', function() {
 });
 
 gulp.task('watch', function() {
-    $.watch(paths.styles)
+    $.watch(paths.themes.css)
         .pipe($.plumber())
-        .pipe(styles())
+        .pipe(themes_css())
         .pipe($.connect.reload());
 
-    $.watch(paths.views.files)
+    $.watch(paths.html.views)
         .pipe($.plumber())
         .pipe($.connect.reload());
 
@@ -136,7 +164,7 @@ gulp.task('test', ['start:server:test'], function() {
 
 // inject bower components
 gulp.task('bower', function() {
-    return gulp.src(paths.views.main)
+    return gulp.src(paths.html.main)
         .pipe(wiredep({
             directory: yeoman.bower,
             ignorePath: '..'
@@ -152,11 +180,11 @@ gulp.task('clean:dist', function(cb) {
     rimraf(yeoman.dist, cb);
 });
 
-gulp.task('client:build', ['html', 'styles'], function() {
+gulp.task('client:build', ['html', 'themes_css'], function() {
     var jsFilter = $.filter('**/*.js');
     var cssFilter = $.filter('**/*.css');
 
-    return gulp.src(paths.views.main)
+    return gulp.src(paths.html.main)
         .pipe($.useref({ searchPath: [$root, '.tmp'] }))
         //filter js
         .pipe(jsFilter)
@@ -167,6 +195,7 @@ gulp.task('client:build', ['html', 'styles'], function() {
         .pipe(cssFilter)
         .pipe($.minifyCss({ cache: true }))
         .pipe(cssFilter.restore())
+        //add rev
         .pipe($.rev())
         .pipe($.revReplace())
         //pipe to
