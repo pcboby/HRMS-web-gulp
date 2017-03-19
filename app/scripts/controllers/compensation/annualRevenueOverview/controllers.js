@@ -3,7 +3,7 @@ angular.module('app')
     .controller('compensationAnnualRevenueOverview', function() {
 
         $('.list-columntree').each(function(idx, e) {
-            $(e).find('ul').width($(e).find('li').length * 40)
+            $(e).find('ul').width($(e).find('li').length * 40);
                 // .scrollbar();
         });
         $('#chartAnnual').highcharts({
@@ -84,4 +84,4 @@ angular.module('app')
             });
             // chart = c;
         });
-    })
+    });
