@@ -6,6 +6,7 @@
 .panel::before{
 	content: '';
 	position: absolute;
+	z-index: 1;
 	top: 0px;
 	left: 0;
 	right: 0;
@@ -48,5 +49,5 @@
 
 .panel .panel-body {
 	padding: 20px 68px 40px 68px;
-	margin-bottom: 5px;
+	/* margin-bottom: 5px; */
 }

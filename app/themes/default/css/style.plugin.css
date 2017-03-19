@@ -1,4 +1,4 @@
-html,
+/* html,
 body {
     font-family: sans-serif;
     -webkit-text-size-adjust: 100%;
@@ -22,10 +22,14 @@ a,span,img{
 	display: inline-block;
 	vertical-align: top;
 }
-
+ */
 a,a:hover{
     text-decoration: none;
     color: inherit;
+}
+
+p{
+    margin: 1em 0;
 }
 
 .header {}
@@ -85,7 +89,10 @@ a,a:hover{
     text-align: right;
 }
 /*  */
-.row {}
+.row {
+    padding: 0;
+    margin: 0;
+}
 
 .row::after {
     content: '';

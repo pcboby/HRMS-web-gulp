@@ -69,6 +69,30 @@ angular.module('app.routers', [])
                         });
                     }]
                 }
+            })
+            //[首页]
+            .state('web.compensationAnnualRevenueOverview', {
+                url: '/compenstaion/annualRevenueOverview.html',
+                views: {
+                    'content': {
+                        templateUrl: $path_root + 'views/compensation/annualRevenueOverview/index.html',
+                        controller: 'compensationAnnualRevenueOverview'
+                    }
+                },
+                data: {
+                    pageTitle: '年度薪酬福利概览'
+                },
+                resolve: {
+                    deps: ['$ocLazyLoad', function($ocLazyLoad) {
+                        return $ocLazyLoad.load({
+                            name: 'app',
+                            insertBefore: '#ng_load_before',
+                            files: [
+                                $path_root + 'scripts/controllers/compensation/annualRevenueOverview/controllers.js'
+                            ]
+                        });
+                    }]
+                }
             });
 
     }]);

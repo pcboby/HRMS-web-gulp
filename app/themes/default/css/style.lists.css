@@ -88,7 +88,7 @@
 
 .list-gross ul li a {
     display: block;
-    line-height: 28px;
+    line-height: 38px;
 }
 
 .list-gross ul li a i {
@@ -115,12 +115,16 @@
     margin: 1px;
 }
 
-.list-gross.mux ul li a>* {
+/* .list-gross.mux ul li a>* {
     padding: 5px 0px;
-}
+} */
 
+.list-gross.mux ul li a {
+    height: 38px;
+}
 .list-gross.mux ul li a i {
     height: 38px;
+    line-height: 38px;
 }
 
 .list-gross.mux ul li a span{

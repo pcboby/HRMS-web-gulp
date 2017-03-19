@@ -60,42 +60,37 @@
         <ul class="sub">
             <li>
                 <a>
-                    <span>工资</span>
+                    <span>纳税地信息</span>
                 </a>
             </li>
             <li>
                 <a>
-                    <span>津贴补助</span>
+                    <span>我的工资单</span>
                 </a>
             </li>
             <li>
                 <a>
-                    <span>奖金</span>
+                    <span>我的奖金</span>
                 </a>
             </li>
             <li>
                 <a>
-                    <span>TUP</span>
+                    <span>TUP信息</span>
                 </a>
             </li>
             <li>
                 <a>
-                    <span>福利</span>
-                </a>
-            </li>
-            <li>
-                <a>
-                    <span>外派补助及福利</span>
-                </a>
-            </li>
-            <li>
-                <a>
-                    <span>我的收入</span>
+                    <span>我的福利</span>
                 </a>
             </li>
             <li class="active">
                 <a>
-                    <span>年薪酬福利概览</span>
+                    <span>年收入概览</span>
+                </a>
+            </li>
+            <li>
+                <a>
+                    <span>支付单</span>
                 </a>
             </li>
             <li>
