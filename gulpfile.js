@@ -19,8 +19,7 @@ var yeoman = {
 };
 
 var paths = {
-    scripts: [yeoman.app + '/scripts/**/*.js'],
-    styles: [yeoman.app + '/styles/**/*.css'],
+    // styles: [yeoman.app + '/styles/**/*.css'],
     test: [yeoman.test + '/spec/**/*.js'],
     testRequire: [
         yeoman.bower + '/angular/angular.js',
@@ -43,6 +42,7 @@ var paths = {
         images: yeoman.app + '/themes/**/images/**/*',
         fonts: yeoman.app + '/themes/**/fonts/*'
     },
+    scripts: [yeoman.app + '/scripts/**/*.js'],
     // scripts: {
     //     common:yeoman.app+'/scripts/*.js',
     //     ngapp: yeoman.app + '/scripts/app/**/*',
@@ -122,6 +122,16 @@ gulp.task('watch', function() {
     $.watch(paths.themes.css)
         .pipe($.plumber())
         .pipe(themes_css())
+        .pipe($.connect.reload());
+
+    $.watch(paths.themes.images)
+        .pipe($.plumber())
+        .pipe(themes_images())
+        .pipe($.connect.reload());
+
+    $.watch(paths.themes.fonts)
+        .pipe($.plumber())
+        .pipe(themes_fonts())
         .pipe($.connect.reload());
 
     $.watch(paths.html.views)
