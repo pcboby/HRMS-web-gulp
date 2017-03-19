@@ -3,12 +3,12 @@
     <div class="panel">
         <div class="panel-body pd-b-20">
             <div class="row">
-                <div class="col-3">
+                <div class="col-md-3">
                     <div>代军第 00206509</div>
                     <div class="font-12 color-13">高级工程师Ａ</div>
                     <div class="font-12 color-13">纳税地：<i class="glyphicon glyphicon-map-marker"></i> 深圳</div>
                 </div>
-                <div class="col-6">
+                <div class="col-md-6">
                     <div class="input-group mg-t-10">
                         <span>年度查询</span>
                         <select name="" id="">
@@ -35,10 +35,10 @@
         </div>
         <div class="panel-body">
             <div class="row">
-                <div class="col-6">
+                <div class="col-md-6">
                     <div id="chartAnnual" style="height: 232px; background-color: #f1f1f1;"></div>
                 </div>
-                <div class="col-6">
+                <div class="col-md-6">
                     <div class="list-gross" style="width:300px;">
                         <div class="title">年度总收入（税前）<span class="pull-right font-18 color-01 strong">CNY 840,000.00</span></div>
                         <ul>
@@ -81,7 +81,7 @@
                 <p class="font-14 color-13">您的津贴补助包括以下：</p>
             </div>
             <div class="row mg-l-20">
-                <div class="col-7">
+                <div class="col-md-7">
                     <div class="list-columnchart mg-l-20">
                         <ul>
                             <li>
@@ -107,7 +107,7 @@
                         </ul>
                     </div>
                 </div>
-                <div class="col-5">
+                <div class="col-md-5">
                     <div class="list">
                         <ul>
                             <li>
@@ -149,8 +149,8 @@
                 <p class="font-14 color-13">公司实行获取分享的奖金制度，也就是说您的奖金是靠自己的贡献挣来的哦！您的奖金包括以下：</p>
             </div>
             <div class="row mg-l-20">
-                <div class="col-1"></div>
-                <div class="col-6">
+                <div class="col-md-1"></div>
+                <div class="col-md-6">
                     <div class="list-columnchart-dire mg-l-20 mg-r-20" style="height: 208px;">
                         <ul>
                             <li>
@@ -176,8 +176,8 @@
                         </ul>
                     </div>
                 </div>
-                <div class="col-1"></div>
-                <div class="col-4">
+                <div class="col-md-1"></div>
+                <div class="col-md-4">
                     <div class="list">
                         <ul>
                             <li>
@@ -290,7 +290,7 @@
             <div class="html-content">
                 <p class="font-14 color-13">我们为您提供的福利包括以下内容</p>
                 <div class="row">
-                    <div class="col-6">
+                    <div class="col-md-6">
                         <div class="text-center">
                             <img src="../../../themes/default/images/img_11.png" alt="">
                             <p class="font-14 no-indent">保险</p>
@@ -308,7 +308,7 @@
                             </p>
                         </div>
                     </div>
-                    <div class="col-6">
+                    <div class="col-md-6">
                         <div class="text-center">
                             <img src="../../../themes/default/images/img_12.png" alt="">
                             <p class="font-14 no-indent">外派福利</p>

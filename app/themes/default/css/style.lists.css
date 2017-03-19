@@ -88,7 +88,7 @@
 
 .list-gross ul li a {
     display: block;
-    line-height: 38px;
+    line-height: 28px;
 }
 
 .list-gross ul li a i {
@@ -121,6 +121,7 @@
 
 .list-gross.mux ul li a {
     height: 38px;
+    line-height: 38px;
 }
 .list-gross.mux ul li a i {
     height: 38px;
