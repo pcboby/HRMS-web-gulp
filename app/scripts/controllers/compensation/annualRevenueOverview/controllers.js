@@ -1,6 +1,11 @@
 'use strict';
 angular.module('app')
     .controller('compensationAnnualRevenueOverview', function() {
+
+        $('.list-columntree').each(function(idx, e) {
+            $(e).find('ul').width($(e).find('li').length * 40)
+                // .scrollbar();
+        });
         $('#chartAnnual').highcharts({
             chart: {
                 plotBackgroundColor: null,
@@ -77,6 +82,6 @@ angular.module('app')
             c.setTitle({
                 y: centerY + titleHeight / 2
             });
-            chart = c;
+            // chart = c;
         });
     })
