@@ -42,6 +42,52 @@ angular.module('app.directives', [])
             }
         };
     }])
+    .directive('ngChartsTree', function () {
+        return {
+            restrict: 'AEC',
+            replace:true,
+            templateUrl:'tpls/model.charts.tree.html',
+            scope:{
+                $items:'=ngData',
+                $step:'@step',
+                $space:'@space',
+                $spaceLen:'@spaceLen',
+                $fixNum:'@fixNum'
+            },
+            controller:function($scope,$element){
+                $scope.getMax=function(){
+                    var max=$scope.$step;
+                    angular.forEach($scope.$data, function(item,idx){
+                        max=Number(item.value)>max?Number(item.value):max
+                    });
+                    max=((max%$scope.$step>0?1:0)+parseInt(max/$scope.$step))*$scope.$step;
+                    console.log('max',max)
+                    return max
+                }
+                $scope.formatter=function(d){
+                    var datas=[];
+                    pullNull();
+                    angular.forEach(d,function(item,idx){
+                        datas.push(item);
+                        pullNull();
+                    })
+                    function pullNull(){
+                        for(var i=$scope.$spaceLen;i>0;i--){
+                            datas.push({});
+                        }
+                    }
+                    return datas
+                }
+            },
+            link: function (scope, iElement, iAttrs) {
+                scope.$step=scope.$step||100;
+                scope.$space=scope.$space||40;
+                scope.$spaceLen=scope.$spaceLen||3;
+                scope.$fixNum=scope.$fixNum||0;
+                scope.$data=scope.formatter(scope.$items);
+            }
+        };
+    })
     .directive('ngChartsColumn', function () {
         return {
             restrict: 'AEC',
@@ -49,7 +95,6 @@ angular.module('app.directives', [])
             templateUrl:'tpls/model.charts.column.html',
             scope:{
                 $data:"=ngData",
-                $height:"@height",
                 $step:"@step",
                 $mode:"@mode"
             },

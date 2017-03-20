@@ -1,0 +1,7 @@
+<div class="list-columntree">
+    <ul style="width:{{$space*$data.length}}px;">
+        <li ng-repeat="data in $data" style="width:{{$space}}px;">
+            <a ng-if="!!data.value" style="height: {{data.value/getMax()*100}}%;" label="{{data.label}}" tips="{{data.value | number:$fixNum}}"><span></span></a>
+        </li>
+    </ul>
+</div>

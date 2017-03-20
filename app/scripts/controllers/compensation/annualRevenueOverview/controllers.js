@@ -28,7 +28,7 @@ angular.module('app')
             label:'特别效益奖',
             value:'3000',
             color:'#54bc9b'
-        }]
+        }];
 
         $scope.data_other=[{
             label:'加班工资',
@@ -42,7 +42,7 @@ angular.module('app')
             label:'离职补尝',
             value:'1000',
             color:'#5aafe8'
-        }]
+        }];
 
         $scope.data_insurance=[{
             label:'养老保险',
@@ -68,11 +68,34 @@ angular.module('app')
             label:'生育保险',
             value:'1140',
             color:'#e74c3c'
-        }]
-        $('.list-columntree').each(function(idx, e) {
-            $(e).find('ul').width($(e).find('li').length * 40);
-                // .scrollbar();
-        });
+        }];
+
+        $scope.data_tree=[{
+            label:'2014',
+            value:'1000'
+        },{
+            label:'2015',
+            value:'10800'
+        },{
+            label:'2016',
+            value:'5160'
+        },{
+            label:'2017',
+            value:'23000'
+        },{
+            label:'2018',
+            value:'1300'
+        },{
+            label:'2019',
+            value:'15800'
+        },{
+            label:'2020',
+            value:'120'
+        }];
+        // $('.list-columntree').each(function(idx, e) {
+        //     $(e).find('ul').width($(e).find('li').length * 40);
+        //         // .scrollbar();
+        // });
         $('#chartAnnual').highcharts({
             chart: {
                 plotBackgroundColor: null,

@@ -291,6 +291,7 @@
 .list-columntree{
 	padding-bottom: 48px;
 	padding-top: 60px;
+    height: 220px;
     overflow-x: auto;
 }
 .list-columntree ul{
