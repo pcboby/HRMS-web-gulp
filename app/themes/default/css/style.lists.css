@@ -225,7 +225,9 @@
 
 /*  */
 
-.list-columnchart-dire {}
+.list-columnchart-dire {
+    height: 220px;
+}
 
 .list-columnchart-dire ul {
     display: flex;

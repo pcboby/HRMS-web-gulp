@@ -41,4 +41,31 @@ angular.module('app.directives', [])
                 }
             }
         };
-    }]);
+    }])
+    .directive('ngChartsColumn', function () {
+        return {
+            restrict: 'AEC',
+            replace:true,
+            templateUrl:'tpls/model.charts.column.html',
+            scope:{
+                $data:"=ngData",
+                $height:"@height",
+                $step:"@step",
+                $mode:"@mode"
+            },
+            controller:function($scope,$element){
+                $scope.getMax=function(){
+                    var max=$scope.$step;
+                    angular.forEach($scope.$data, function(item,idx){
+                        max=Number(item.value)>max?Number(item.value):max
+                    });
+                    max=((max%$scope.$step>0?1:0)+parseInt(max/$scope.$step))*$scope.$step;
+                    console.log('max',max)
+                    return max
+                }
+            },
+            link: function (scope, iElement, iAttrs) {
+                scope.$step=scope.$step||100;
+            }
+        };
+    });

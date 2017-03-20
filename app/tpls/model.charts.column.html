@@ -1,0 +1,9 @@
+<div ng-class="{'list-columnchart':$mode!='dire','list-columnchart-dire':$mode=='dire'}">
+    <ul>
+        <li ng-repeat="data in $data">
+            <a style="{{($mode=='dire'?'height':'width')+':'+(data.value/getMax()*100)+'%'}}" label="{{data.label}}" tips="{{data.value | number:2}}">
+                <span style="background-color: {{data.color}};"></span>
+            </a>
+        </li>
+    </ul>
+</div>

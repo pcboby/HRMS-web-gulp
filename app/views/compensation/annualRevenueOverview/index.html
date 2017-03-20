@@ -65,7 +65,7 @@
                     <div id="chartAnnual" style="height: 232px; background-color: #f1f1f1;"></div>
                 </div>
                 <div class="col-md-7">
-                    <div class="list-gross mux">
+                    <div class="list-gross mux" style="width:420px;">
                         <div class="title">年度总收入（税前）<span class="pull-right font-18 color-01 strong">CNY 840,000.00</span></div>
                         <ul>
                             <li>
@@ -147,20 +147,7 @@
             </div>
             <div class="row mg-l-20">
                 <div class="col-md-7">
-                    <div class="list-columnchart mg-l-20">
-                        <ul>
-                            <li>
-                                <a style="width: 40%;" label="岗位津贴" tips="2,000.00">
-                                    <span style="background-color: #78d6f5;"></span>
-                                </a>
-                            </li>
-                            <li>
-                                <a style="width: 100%;" label="外派补助" tips="5,027.49">
-                                    <span style="background-color: #7897f5;"></span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
+                    <ng-charts-column class="mg-l-20" ng-data="data_subsidy"/>
                 </div>
                 <div class="col-md-2"></div>
                 <div class="col-md-3">
@@ -192,30 +179,7 @@
             </div>
             <div class="row mg-l-20">
                 <div class="col-md-7">
-                    <div class="list-columnchart mg-l-20">
-                        <ul>
-                            <li>
-                                <a style="width: 40%;" label="年度奖金" tips="2,000.00">
-                                    <span style="background-color: #ffc000;"></span>
-                                </a>
-                            </li>
-                            <li>
-                                <a style="width: 100%;" label="及时激励" tips="5,027.49">
-                                    <span style="background-color: #348faa;"></span>
-                                </a>
-                            </li>
-                            <li>
-                                <a style="width: 1%;" label="多元化激励" tips="1,000.00">
-                                    <span style="background-color: #f58d36;"></span>
-                                </a>
-                            </li>
-                            <li>
-                                <a style="width: 45%;" label="特别效益奖" tips="3,000.00">
-                                    <span style="background-color: #54bc9b;"></span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
+                    <ng-charts-column class="mg-l-20" ng-data="data_bonus"/>
                 </div>
                 <div class="col-md-2">
                     <div class="list">
@@ -356,25 +320,7 @@
             </div>
             <div class="row mg-l-20">
                 <div class="col-md-7">
-                    <div class="list-columnchart mg-l-20">
-                        <ul>
-                            <li>
-                                <a style="width: 40%;" label="加班工资" tips="2,000.00">
-                                    <span style="background-color: #a9d86e;"></span>
-                                </a>
-                            </li>
-                            <li>
-                                <a style="width: 100%;" label="离职结算" tips="5,027.49">
-                                    <span style="background-color: #f9a312;"></span>
-                                </a>
-                            </li>
-                            <li>
-                                <a style="width: 1%;" label="离职补尝" tips="1,000.00">
-                                    <span style="background-color: #5aafe8;"></span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
+                    <ng-charts-column class="mg-l-20" ng-data="data_other"/>
                 </div>
                 <div class="col-md-2">
                     <div class="list">
@@ -447,40 +393,7 @@
                             </p>
                         </div>
                         <div class="title title-lg text-center"><span class="mg-r-10">公司支出的保险费用包括</span></div>
-                        <div class="list-columnchart">
-                            <ul>
-                                <li>
-                                    <a style="width: 75%;" label="养老保险" tips="31,920.00">
-                                        <span style="background-color: #3bc6bf;"></span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a style="width: 35%;" label="医疗保险" tips="14,936.49">
-                                        <span style="background-color: #ff7460;"></span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a style="width: 30%;" label="住房公积金" tips="11,400.00">
-                                        <span style="background-color: #42aaf3;"></span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a style="width: 1.5%;" label="工伤保险" tips="321.00">
-                                        <span style="background-color: #8471dd;"></span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a style="width: 9%;" label="失业保险" tips="2,052.00">
-                                        <span style="background-color: #fecd08;"></span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a style="width: 4%;" label="生育保险" tips="1,140.00">
-                                        <span style="background-color: #e74c3c;"></span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
+                        <ng-charts-column ng-data="data_insurance"/>
                     </div>
                     <div class="col-md-6">
                         <div class="text-center">
