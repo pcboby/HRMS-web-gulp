@@ -2,19 +2,19 @@
     <!--  -->
     <div class="panel pd-none">
         <div class="panel-body pd-none">
-            <div class="row">
-                <div class="col-md-6 bd-r pd-t-10 pd-r-10 pd-b-10 pd-l-40">
+            <div class="row" ng-init="$show=true">
+                <div ng-class="{'col-md-6':$show,'col-md-3':!$show}" class="bd-r pd-t-10 pd-r-10 pd-b-10 pd-l-40">
                     <div class="col-md-12 pd-t-10 pd-r-20">
                         <div class="input-group-checkbox pull-right">
                             <label>
-                                <input type="checkbox" checked>
+                                <input type="checkbox" ng-model="$show">
                                 <span class="bar" text-open="显示" text-close="隐藏">
                                     <span></span>
                                 </span>
                             </label>
                         </div>
                     </div>
-                    <div class="col-md-5 pd-t-10 pd-r-20 pd-b-10 pd-l-10 bd-r">
+                    <div ng-class="{'col-md-6':$show,'col-md-12':!$show}" class="pd-t-10 pd-r-20 pd-b-10 pd-l-10">
                         <div>代军第 00206509</div>
                         <div class="font-12 color-13">
                             高级工程师Ａ
@@ -25,7 +25,7 @@
                             <i class="glyphicon glyphicon-map-marker"></i> 深圳
                         </div>
                     </div>
-                    <div class="col-md-7 pd-t-10 pd-r-10 pd-b-20 pd-l-20 font-12 color-13">
+                    <div ng-show="$show" class="col-md-6 pd-t-10 pd-r-10 pd-b-20 pd-l-20 font-12 color-13 bd-l">
                         发薪帐户：6225 **** **** *789
                         <br> 补助帐户：420202**********19
                         <br> 华为国际帐户：--
@@ -33,7 +33,7 @@
                         <br> 公积金帐户：420202**********19
                     </div>
                 </div>
-                <div class="col-md-6 pd-t-30 pd-r-40 pd-b-10 pd-l-40">
+                <div ng-class="{'col-md-6':$show,'col-md-9':!$show}" class="pd-t-30 pd-r-40 pd-b-10 pd-l-40">
                     <div class="input-group mg-t-10">
                         <span>年度查询</span>
                         <select name="" id="">
